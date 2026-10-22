@@ -14,7 +14,7 @@ Dans Simuline, il existe trois types de boîtes:
 
 La scene correspond à l'écran de jeu principal, comprenant la question/ le dialogue du patient/ le contexte, ainsi que les images de fond, d'interlocuteur et les potentielles illustrations aditionnelles. Le texte correspond au texte affiché en haut à gauche lors du jeu
 
-<img width="263" height="159" alt="scene" src="https://github.com/user-attachments/assets/bbd3e8fc-08ec-467b-8553-2e8eac94c594" />
+<img width="449" height="282" alt="scene" src="https://github.com/user-attachments/assets/09f13489-3bba-4bf1-8c26-28d4b038a19b" />
 
 
 Une boite de scéne peut recevoir deux types de boîtes de suppléments:
