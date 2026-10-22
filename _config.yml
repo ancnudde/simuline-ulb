@@ -3,7 +3,7 @@ plugins:
 relative_links:
   enabled: true
   collections: true
-theme: cayman
+theme: minima
 include:
   - CONTRIBUTING.md
   - README.md
