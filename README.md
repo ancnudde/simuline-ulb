@@ -14,12 +14,17 @@ Dans Simuline, il existe trois types de boîtes:
 
 La scene correspond à l'écran de jeu principal, comprenant la question/ le dialogue du patient/ le contexte, ainsi que les images de fond, d'interlocuteur et les potentielles illustrations aditionnelles. Le texte correspond au texte affiché en haut à gauche lors du jeu
 
+<img width="263" height="159" alt="scene" src="https://github.com/user-attachments/assets/bbd3e8fc-08ec-467b-8553-2e8eac94c594" />
+
+
 Une boite de scéne peut recevoir deux types de boîtes de suppléments:
 
-- Des boîtes d'illustration, qui vont afficher soit
+1) Des boîtes d'illustration, qui vont afficher soit
 -   Background: Donne l'image de fond de la scène (officine, laboratoire, ...)
 -   Interlocutor: Donne la personne présente en face du joueur (patient, professeur, ...)
 -   Additional, qui s'affichera avant la scène, et permet d'afficher par exemple une ordonance, un spectre, une photo, ...
+
+2) Une boîte de plugin, permettant d'ajouter un plugin au jeu. Pour le moment, le seul plugin accessible est le plugin *Computer*, qui permet d'afficher un ordinateur en bas de l'écran. Lorsque l'utilisateur clique sur écran d'ordinateur, il pourra accéder soit à un simulateur de microscope, soit à Pharmasoft, le simulateur de software officinal. L'option *Remove plugin* permet de retirer l'écran sur les scènes suivantes.
 
 ## Réponse
 
