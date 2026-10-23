@@ -1,5 +1,26 @@
 # Guide utilisateur de Simuline
 
+## Table des matières
+
+- [1. Présentation générale](#1-présentation-générale)
+- [2. Édition d’un jeu](#2-édition-dun-jeu)
+  - [2.1. Principes de fonctionnement](#21-principes-de-fonctionnement)
+  - [Fin du scénario](#fin-du-scénario)
+  - [2.2. Difficultés d’édition courantes](#22-difficultés-dédition-courantes)
+- [3. Configuration des questions](#3-configuration-des-questions)
+  - [3.1. Scène](#31-scène)
+  - [3.2. Illustrations](#32-illustrations)
+  - [3.3. Plugins](#33-plugins)
+- [4. Configuration des réponses](#4-configuration-des-réponses)
+  - [4.1. Réponse fixe](#41-réponse-fixe)
+  - [4.2. Réponse textuelle](#42-réponse-textuelle)
+  - [4.3. Réponse numérique](#43-réponse-numérique)
+- [5. Conditions d’affichage des réponses](#5-conditions-daffichage-des-réponses)
+  - [5.1. Principe général](#51-principe-général)
+  - [5.2. Paramétrage d’une condition](#52-paramétrage-dune-condition)
+
+---
+
 ## 1. Présentation générale
 
 **Simuline** est un moteur permettant de concevoir et de jouer à des jeux sérieux (*serious games*). Il propose un éditeur visuel dans lequel l’auteur du jeu définit les scènes, les modalités de réponse et les mécanismes de progression du scénario.
