@@ -25,7 +25,13 @@ Editeur           |  Jeu
 
 La scene correspond à l'écran de jeu principal, comprenant la question/ le dialogue du patient/ le contexte, ainsi que les images de fond, d'interlocuteur et les potentielles illustrations aditionnelles. Le texte correspond au texte affiché en haut à gauche lors du jeu
 
-<img width="225" height="142" alt="scene" src="https://github.com/user-attachments/assets/09f13489-3bba-4bf1-8c26-28d4b038a19b" />
+<img width="450" alt="scene_num" src="https://github.com/user-attachments/assets/c368535d-aa28-4f82-8ec1-7a95a005be0e" />
+
+1) Texte de la question
+2) Ajouter un lien vers un site externe dans le texte
+3) Rendre le texte sélectionné italique
+4) Ajouter un retour à la ligne
+5) Suprimer la boîte
 
 
 Une boite de scéne peut recevoir deux types de boîtes de suppléments:
