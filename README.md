@@ -16,7 +16,7 @@ Les connections entre une bôite de question et une boîte de réponse forment l
 
 Editeur           |  Jeu
 :-------------------------:|:-------------------------:
-<img width="250" alt="scene_ex" src="https://github.com/user-attachments/assets/140edef8-413f-43c0-a224-209d9d1bacc2" /> | <img width="250" alt="scene_vis" src="https://github.com/user-attachments/assets/9df2c350-0f21-4936-98ed-89d27c942e57" />
+<img width="400" alt="scene_ex" src="https://github.com/user-attachments/assets/140edef8-413f-43c0-a224-209d9d1bacc2" /> | <img width="400" alt="scene_vis" src="https://github.com/user-attachments/assets/9df2c350-0f21-4936-98ed-89d27c942e57" />
 
 
 
