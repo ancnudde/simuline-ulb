@@ -10,6 +10,16 @@ Dans Simuline, il existe trois types de boîtes:
 - Les boîtes de réponses, qui définissent le type de réponse que le joueur pourra donner
 - Les boîtes de supplément, qui s'attachent aux boites de question ou de réponse pour modifier la façon dont elles fonctionnent
 
+Un jeu sur simuline se compose d'un ensemble de scènes. Dans une scène, une question ou un dialogue est présenté au joueur, qui aura la possibilité d'y répondre selon la modalité choisie par l'éditeur. En fonction de la réponse donnée et le chemin prévu par l'éditeur, le joueur passera à la scène suivante, rejouera la même scène ou sera renvoyé à une scène précédente.
+
+Les connections entre une bôite de question et une boîte de réponse forment la scène. Les connections entre les boites de réponses et les boîtes de questions suivantes donnent la progression des scènes au cours du jeu en fonction des réponses de l'utilisateur.
+
+<img width="1680" height="933" alt="scene_vis" src="https://github.com/user-attachments/assets/9df2c350-0f21-4936-98ed-89d27c942e57" />
+<img width="866" height="553" alt="scene_ex" src="https://github.com/user-attachments/assets/140edef8-413f-43c0-a224-209d9d1bacc2" />
+
+
+
+
 ## Scène
 
 La scene correspond à l'écran de jeu principal, comprenant la question/ le dialogue du patient/ le contexte, ainsi que les images de fond, d'interlocuteur et les potentielles illustrations aditionnelles. Le texte correspond au texte affiché en haut à gauche lors du jeu
