@@ -33,6 +33,18 @@ Les connexions doivent donc être configurées de manière à représenter le d�
 |:---:|:---:|
 | <img width="400" alt="Exemple de scène dans l'éditeur" src="https://github.com/user-attachments/assets/140edef8-413f-43c0-a224-209d9d1bacc2" /> | <img width="600" alt="Exemple de scène pendant le jeu" src="https://github.com/user-attachments/assets/9df2c350-0f21-4936-98ed-89d27c942e57" /> |
 
+### Fin du scénario
+
+Pour valider un scénario, celui-ci doit obligatoirement finir par une boîte de fin. La boîte de fin marque la fin du jeu et l'affichage du score et du bilan du joueur.
+
+## 2.2 Difficultés d'édition courantes
+
+En cas d'impossibilité à enregistrer le scénario, voici quelques éléments à vérifier:
+
+- **Un scénario doit obligatoirement finir par une boîte de fin**. Sans boîte de fin connectée à au mons un chemin dans le scénario, le scénario ne pourra pas être sauvegardé.
+- **Toutes les boîtes de question et réponse doivent être connectées**. L'absence d'une de ces connections mènerait à une incohérence dans le scénario. Le programme ne permettra pas de sauvegarder un scénario avec des branches inconsistantes.
+- 
+
 # 3. Configuration des questions
 
 ## 3.1. Scène
