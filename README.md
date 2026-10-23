@@ -41,7 +41,16 @@ Une boite de scéne peut recevoir deux types de boîtes de suppléments:
 -   Interlocutor: Donne la personne présente en face du joueur (patient, professeur, ...)
 -   Additional, qui s'affichera avant la scène, et permet d'afficher par exemple une ordonance, un spectre, une photo, ...
 
+<img width="250" alt="illustration_num" src="https://github.com/user-attachments/assets/51493131-eb70-45c1-a841-f6e3c68572f9" />
+
+1) Choix du fichier image
+2) Nom du fichier sélectionné
+3) Prévisualisation de l'image
+4) Choix du type d'illustration
+
 2) Une boîte de plugin, permettant d'ajouter un plugin au jeu. Pour le moment, le seul plugin accessible est le plugin *Computer*, qui permet d'afficher un ordinateur en bas de l'écran. Lorsque l'utilisateur clique sur écran d'ordinateur, il pourra accéder soit à un simulateur de microscope, soit à Pharmasoft, le simulateur de software officinal. L'option *Remove plugin* permet de retirer l'écran sur les scènes suivantes.
+
+<img width="274" height="209" alt="plugin_num" src="https://github.com/user-attachments/assets/e01f62da-1f60-49ff-81a8-04c5f19ff7a0" />
 
 ## Réponse
 
