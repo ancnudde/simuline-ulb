@@ -202,6 +202,7 @@ Les paramètres disponibles sont les suivants :
 2. **Valeur associée à la condition** : précise la valeur à vérifier pour satisfaire la condition.
 
 Par exemple, si la valeur configurée est « Daisy Draté », la réponse associée à cette condition ne sera affichée que lorsque le joueur aura consulté le dossier du patient correspondant dans PharmaSoft.
+
 |:---:|:---:|
 | <img width="400"  alt="Screenshot from 2026-10-23 09-15-27" src="https://github.com/user-attachments/assets/a94ed634-2de8-4eab-9b3e-ef46c80c3e56" />| <img width="400" alt="condition_1" src="https://github.com/user-attachments/assets/d9d4b4bd-815e-4082-b0e9-dd7e0ab1f2ac" /> |
 |<img width="400" alt="condition_2" src="https://github.com/user-attachments/assets/0798d01d-99c0-41ab-a819-06f691e47475" /> |<img width="400" alt="condition_3" src="https://github.com/user-attachments/assets/5ddbd36a-1483-4e80-8000-28dcc3322990" />|
