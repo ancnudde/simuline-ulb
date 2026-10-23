@@ -48,350 +48,376 @@
     </nav>
     <main>
       <h1 id="guide-utilisateur-de-simuline">Guide utilisateur de Simuline</h1>
-      <h2 id="table-des-matières">Table des matières</h2>
-      <ul>
-        <li><a href="#1-présentation-générale">1. Présentation générale</a></li>
-        <li><a href="#2-édition-dun-jeu">2. Édition d’un jeu</a></li>
-        <li><a href="#21-principes-de-fonctionnement">2.1. Principes de
-            fonctionnement</a></li>
-        <li><a href="#fin-du-scénario">Fin du scénario</a></li>
-        <li><a href="#22-difficultés-dédition-courantes">2.2. Difficultés
-            d’édition courantes</a></li>
-        <li><a href="#3-configuration-des-questions">3. Configuration des
-            questions</a></li>
-        <li><a href="#31-scène">3.1. Scène</a></li>
-        <li><a href="#32-illustrations">3.2. Illustrations</a></li>
-        <li><a href="#33-plugins">3.3. Plugins</a></li>
-        <li><a href="#4-configuration-des-réponses">4. Configuration des
-            réponses</a></li>
-        <li><a href="#41-réponse-fixe">4.1. Réponse fixe</a></li>
-        <li><a href="#42-réponse-textuelle">4.2. Réponse textuelle</a></li>
-        <li><a href="#43-réponse-numérique">4.3. Réponse numérique</a></li>
-        <li><a href="#5-conditions-daffichage-des-réponses">5. Conditions
-            d’affichage des réponses</a></li>
-        <li><a href="#51-principe-général">5.1. Principe général</a></li>
-        <li><a href="#52-paramétrage-dune-condition">5.2. Paramétrage d’une
-            condition</a></li>
-      </ul>
-      <h2 id="1-présentation-générale">1. Présentation générale</h2>
-      <p><strong>Simuline</strong> est un moteur permettant de concevoir et de
-        jouer à des jeux sérieux (<em>serious games</em>). Il propose un éditeur
-        visuel dans lequel l’auteur du jeu définit les scènes, les modalités de
-        réponse et les mécanismes de progression du scénario.</p>
-      <p>Ce guide présente les principales fonctionnalités de l’éditeur et
-        décrit la configuration des différents éléments qui composent un jeu.
-      </p>
-      <h1 id="2-édition-d-un-jeu">2. Édition d’un jeu</h1>
-      <h2 id="2-1-principes-de-fonctionnement">2.1. Principes de fonctionnement
-      </h2>
-      <p>Dans Simuline, les éléments d’un jeu sont représentés par des boîtes
-        reliées entre elles. Il existe trois catégories de boîtes :</p>
-      <ul>
-        <li><strong>Boîtes de question</strong> : elles définissent les scènes
-          présentées au joueur. Actuellement, la scène est le seul type de boîte
-          de question disponible.</li>
-        <li><strong>Boîtes de réponse</strong> : elles définissent les modalités
-          de réponse proposées au joueur et les conséquences associées à ses
-          choix.</li>
-        <li><strong>Boîtes de supplément</strong> : elles permettent d’ajouter
-          des fonctionnalités ou de modifier le comportement des boîtes de
-          question ou de réponse auxquelles elles sont associées.</li>
-      </ul>
-      <p>Un jeu Simuline se compose d’un ensemble de scènes. Chaque scène
-        présente au joueur une question, un dialogue ou un contexte. Selon les
-        modalités définies par l’auteur, le joueur peut fournir une réponse qui
-        détermine la suite du scénario.</p>
-      <p>En fonction de la réponse fournie et des connexions configurées dans
-        l’éditeur, le joueur peut accéder à une nouvelle scène, revenir à une
-        scène précédente ou rejouer la scène en cours.</p>
-      <h3 id="organisation-des-connexions">Organisation des connexions</h3>
-      <p>Les connexions entre les boîtes déterminent la structure et le
-        déroulement du jeu :</p>
-      <ul>
-        <li>Les connexions entre une boîte de question et ses boîtes de réponse
-          définissent les modalités de réponse associées à une scène.</li>
-        <li>Les connexions entre les boîtes de réponse et les boîtes de question
-          suivantes déterminent la progression du joueur dans le scénario.</li>
-      </ul>
-      <p>Les connexions doivent donc être configurées de manière à représenter
-        le déroulement souhaité du jeu.</p>
-      <div class="table-wrap">
-        <table>
-          <tr>
-            <th>Éditeur</th>
-            <th>Jeu en cours</th>
-          </tr>
-          <tr>
-            <td>&lt;img width="400" alt="Exemple de scène dans l'éditeur"
-              src="https://github.com/user-attachments/assets/140edef8-413f-43c0-a224-209d9d1bacc2"
-              /&gt;</td>
-            <td>&lt;img width="600" alt="Exemple de scène pendant le jeu"
-              src="https://github.com/user-attachments/assets/9df2c350-0f21-4936-98ed-89d27c942e57"
-              /&gt;</td>
-          </tr>
-        </table>
-      </div>
-      <h3 id="fin-du-scénario">Fin du scénario</h3>
-      <p>Pour valider un scénario, celui-ci doit obligatoirement finir par une
-        boîte de fin. La boîte de fin marque la fin du jeu et l'affichage du
-        score et du bilan du joueur.</p>
-      <h2 id="2-2-difficultés-d-édition-courantes">2.2 Difficultés d'édition
-        courantes</h2>
-      <p>En cas d'impossibilité à enregistrer le scénario, voici quelques
-        éléments à vérifier:</p>
-      <ul>
-        <li><strong>Un scénario doit obligatoirement finir par une boîte de
-            fin</strong>. Sans boîte de fin connectée à au mons un chemin dans
-          le scénario, le scénario ne pourra pas être sauvegardé.</li>
-        <li><strong>Toutes les boîtes de question et réponse doivent être
-            connectées</strong>. L'absence d'une de ces connections mènerait à
-          une incohérence dans le scénario. Le programme ne permettra pas de
-          sauvegarder un scénario avec des branches inconsistantes.</li>
-      </ul>
-      <p>-</p>
-      <h1 id="3-configuration-des-questions">3. Configuration des questions</h1>
-      <h2 id="3-1-scène">3.1. Scène</h2>
-      <p>La boîte <strong>Scène</strong> définit l’écran principal présenté au
-        joueur. Elle permet notamment de configurer :</p>
-      <ul>
-        <li>le texte de la question, du dialogue ou du contexte ;</li>
-        <li>l’image d’arrière-plan ;</li>
-        <li>l’image de l’interlocuteur ;</li>
-        <li>les illustrations complémentaires éventuellement présentées avant la
-          scène.</li>
-      </ul>
-      <p>Le texte configuré dans la boîte correspond au contenu affiché dans la
-        partie supérieure gauche de l’écran de jeu.</p>
-      <figure class="screenshot"><img width="450"
-          alt="Configuration d'une scène"
-          src="https://github.com/user-attachments/assets/c368535d-aa28-4f82-8ec1-7a95a005be0e">
-      </figure>
-      <p>Les commandes de l’éditeur de texte sont les suivantes :</p>
-      <ol>
-        <li><strong>Texte de la scène</strong> : permet de saisir ou de modifier
-          le texte présenté au joueur.</li>
-        <li><strong>Insertion d’un lien</strong> : permet d’ajouter un lien vers
-          un site externe dans le texte.</li>
-        <li><strong>Mise en italique</strong> : permet de mettre en italique le
-          texte sélectionné.</li>
-        <li><strong>Saut de ligne</strong> : permet d’insérer un retour à la
-          ligne.</li>
-        <li><strong>Suppression de la boîte</strong> : permet de supprimer la
-          boîte de scène.</li>
-      </ol>
-      <p>Une boîte de scène peut être associée à deux types de boîtes de
-        supplément : les boîtes d’illustration et les boîtes de plugin.</p>
-      <h2 id="3-2-illustrations">3.2. Illustrations</h2>
-      <p>Les boîtes d’illustration permettent d’associer des images à une scène.
-        Trois types d’illustrations sont disponibles :</p>
-      <ul>
-        <li><strong>Background</strong> : définit l’image d’arrière-plan de la
-          scène, par exemple une officine ou un laboratoire.</li>
-        <li><strong>Interlocutor</strong> : définit l’image de l’interlocuteur
-          présenté au joueur, par exemple un patient ou un enseignant.</li>
-        <li><strong>Additional</strong> : définit une illustration
-          complémentaire affichée avant la scène. Ce type peut notamment être
-          utilisé pour présenter une ordonnance, un spectre ou une photographie.
-        </li>
-      </ul>
-      <figure class="screenshot"><img width="250"
-          alt="Configuration d'une illustration"
-          src="https://github.com/user-attachments/assets/51493131-eb70-45c1-a841-f6e3c68572f9">
-      </figure>
-      <p>La boîte d’illustration comporte les éléments suivants :</p>
-      <ol>
-        <li><strong>Sélection du fichier</strong> : permet de choisir le fichier
-          image à utiliser.</li>
-        <li><strong>Nom du fichier</strong> : indique le nom du fichier
-          sélectionné.</li>
-        <li><strong>Prévisualisation</strong> : affiche un aperçu de l’image
-          choisie.</li>
-        <li><strong>Type d’illustration</strong> : permet de sélectionner la
-          catégorie de l’illustration (<em>Background</em>,
-          <em>Interlocutor</em> ou <em>Additional</em>).
-        </li>
-      </ol>
-      <h2 id="3-3-plugins">3.3. Plugins</h2>
-      <p>Les boîtes de plugin permettent d’ajouter des fonctionnalités
-        complémentaires au jeu.</p>
-      <p>Actuellement, le seul plugin disponible est le plugin
-        <strong>Computer</strong>. Celui-ci ajoute un ordinateur en bas de
-        l’écran de jeu. Lorsque le joueur clique sur cet ordinateur, il peut
-        accéder à l’un des outils proposés :
-      </p>
-      <ul>
-        <li>un simulateur de microscope ;</li>
-        <li><strong>PharmaSoft</strong>, un simulateur de logiciel officinal.
-        </li>
-      </ul>
-      <p>L’option <strong>Remove plugin</strong> permet de retirer le plugin des
-        scènes suivantes.</p>
-      <figure class="screenshot"><img width="250"
-          alt="Configuration d'un plugin"
-          src="https://github.com/user-attachments/assets/e01f62da-1f60-49ff-81a8-04c5f19ff7a0">
-      </figure>
-      <h1 id="4-configuration-des-réponses">4. Configuration des réponses</h1>
-      <p>Les boîtes de réponse définissent les modalités selon lesquelles le
-        joueur peut répondre à une question. Elles permettent également de
-        configurer les scores attribués et les commentaires présentés en
-        fonction du résultat.</p>
-      <p>Simuline propose trois types de réponses :</p>
-      <ul>
-        <li><strong>Réponse fixe</strong> : correspond à un choix prédéfini par
-          l’auteur. Elle est notamment utilisée pour créer des questions à choix
-          multiples (QCM).</li>
-        <li><strong>Réponse numérique</strong> : attend une valeur numérique,
-          qui peut être exacte ou comprise dans un intervalle défini.</li>
-        <li><strong>Réponse textuelle</strong> : attend une réponse saisie sous
-          forme de texte.</li>
-      </ul>
-      <h2 id="4-1-réponse-fixe">4.1. Réponse fixe</h2>
-      <p>Une boîte de réponse fixe correspond à un choix proposé au joueur dans
-        une question à choix multiples.</p>
-      <p>Une scène peut être associée à plusieurs réponses fixes, ou à une
-        seule. L’ordre d’affichage des réponses dépend actuellement de leur
-        ordre de création : la première réponse créée est la première affichée.
-        Il n’est pas possible de modifier directement cet ordre dans l’éditeur.
-      </p>
-      <figure class="screenshot"><img width="318"
-          alt="Configuration d'une réponse fixe"
-          src="https://github.com/user-attachments/assets/0445ff87-0582-4c70-ab51-89ff5bd0e4aa">
-      </figure>
-      <p>Les paramètres disponibles sont les suivants :</p>
-      <ol>
-        <li><strong>Texte de la réponse</strong> : définit le libellé du choix
-          proposé au joueur.</li>
-        <li><strong>Commentaire de feedback</strong> : définit le commentaire
-          associé à cette réponse.</li>
-        <li><strong>Score</strong> : définit le nombre de points attribués à la
-          réponse. Le score peut être positif ou négatif.</li>
-        <li><strong>Affichage immédiat du feedback</strong> : lorsque cette
-          option est activée, le commentaire est affiché immédiatement après la
-          sélection de la réponse. Dans le cas contraire, il est présenté
-          uniquement lors du bilan de fin de jeu.</li>
-      </ol>
-      <h2 id="4-2-réponse-textuelle">4.2. Réponse textuelle</h2>
-      <p>Une boîte de réponse textuelle permet de demander au joueur de saisir
-        une réponse sous forme de texte. Elle convient notamment aux questions
-        portant sur un concept, le nom d’un médicament ou toute autre réponse
-        exprimable par un texte.</p>
-      <p>La configuration permet de définir la réponse attendue et les règles de
-        comparaison utilisées pour déterminer si la réponse du joueur est
-        correcte. Selon le paramétrage de la sensibilité à la casse, les
-        différences de majuscules et de minuscules peuvent être prises en compte
-        ou ignorées.</p>
-      <figure class="screenshot"><img width="559"
-          alt="Configuration d'une réponse textuelle"
-          src="https://github.com/user-attachments/assets/fb02cc92-d44d-4b79-9f70-e31c0788cd6e">
-      </figure>
-      <p>Les paramètres disponibles sont les suivants :</p>
-      <ol>
-        <li><strong>Indication</strong> : fournit des instructions au joueur sur
-          le format attendu. Par exemple : « Répondez en un seul mot, sans
-          déterminant. Attention à l’orthographe. »</li>
-        <li><strong>Réponse attendue</strong> : définit le texte de référence
-          utilisé pour évaluer la réponse. Le paramètre de sensibilité à la
-          casse détermine si les différences de majuscules et de minuscules sont
-          prises en compte. Les autres règles de comparaison dépendent du
-          comportement de l’éditeur.</li>
-        <li><strong>Score en cas de réponse correcte</strong> : définit le
-          nombre de points attribués lorsque la réponse est correcte.</li>
-        <li><strong>Score en cas de réponse incorrecte</strong> : définit le
-          nombre de points attribués lorsque la réponse est incorrecte.</li>
-        <li><strong>Commentaire en cas de réponse correcte</strong> : définit le
-          feedback associé à une réponse correcte.</li>
-        <li><strong>Commentaire en cas de réponse incorrecte</strong> : définit
-          le feedback associé à une réponse incorrecte.</li>
-        <li><strong>Affichage immédiat du feedback en cas de réponse
-            correcte</strong> : lorsque cette option est activée, le commentaire
-          correspondant est affiché immédiatement après une réponse correcte.
-          Sinon, il est présenté uniquement lors du bilan de fin de jeu.</li>
-        <li><strong>Affichage immédiat du feedback en cas de réponse
-            incorrecte</strong> : lorsque cette option est activée, le
-          commentaire correspondant est affiché immédiatement après une réponse
-          incorrecte. Sinon, il est présenté uniquement lors du bilan de fin de
-          jeu.</li>
-      </ol>
-      <h2 id="4-3-réponse-numérique">4.3. Réponse numérique</h2>
-      <p>Une boîte de réponse numérique permet au joueur de saisir une valeur
-        numérique. Les nombres entiers et décimaux, positifs ou négatifs, sont
-        pris en charge.</p>
-      <figure class="screenshot"><img width="561"
-          alt="Configuration d'une réponse numérique"
-          src="https://github.com/user-attachments/assets/05f3ddbb-5baa-4acc-9185-c5465836ee0a">
-      </figure>
-      <p>Les paramètres disponibles sont les suivants :</p>
-      <ol>
-        <li><strong>Indication</strong> : précise le format ou l’unité attendue
-          pour la réponse. Par exemple : « Donnez votre réponse en mg/ml. »</li>
-        <li><strong>Réponse attendue et mode de comparaison</strong> : définit
-          la valeur de référence et la méthode utilisée pour évaluer la réponse
-          :</li>
-      </ol>
-      <ul>
-        <li><strong>Exact</strong> : la valeur saisie doit correspondre
-          exactement à la valeur attendue.</li>
-        <li><strong>Range</strong> : la valeur saisie doit appartenir à
-          l’intervalle défini.</li>
-      </ul>
-      <ol>
-        <li><strong>Score en cas de réponse correcte</strong> : définit le
-          nombre de points attribués lorsque la réponse est correcte.</li>
-        <li><strong>Score en cas de réponse incorrecte</strong> : définit le
-          nombre de points attribués lorsque la réponse est incorrecte.</li>
-        <li><strong>Commentaire en cas de réponse correcte</strong> : définit le
-          feedback associé à une réponse correcte.</li>
-        <li><strong>Commentaire en cas de réponse incorrecte</strong> : définit
-          le feedback associé à une réponse incorrecte.</li>
-        <li><strong>Affichage immédiat du feedback en cas de réponse
-            correcte</strong> : lorsque cette option est activée, le commentaire
-          correspondant est affiché immédiatement après une réponse correcte.
-          Sinon, il est présenté uniquement lors du bilan de fin de jeu.</li>
-        <li><strong>Affichage immédiat du feedback en cas de réponse
-            incorrecte</strong> : lorsque cette option est activée, le
-          commentaire correspondant est affiché immédiatement après une réponse
-          incorrecte. Sinon, il est présenté uniquement lors du bilan de fin de
-          jeu.</li>
-      </ol>
-      <h1 id="5-conditions-d-affichage-des-réponses">5. Conditions d’affichage
-        des réponses</h1>
-      <h2 id="5-1-principe-général">5.1. Principe général</h2>
-      <p>Les boîtes de réponse peuvent être associées à des boîtes de condition.
-        Ces dernières permettent de contrôler l’affichage d’une réponse en
-        fonction d’une action effectuée par le joueur ou d’une condition remplie
-        au cours du scénario.</p>
-      <p>Actuellement, le principal cas d’utilisation disponible concerne
-        l’affichage conditionnel d’une réponse en fonction de la consultation du
-        dossier d’un patient dans PharmaSoft.</p>
-      <figure class="screenshot"><img width="255"
-          alt="Configuration d'une condition"
-          src="https://github.com/user-attachments/assets/55c9fd5f-6646-47b7-8eef-962f71117db1">
-      </figure>
-      <h2 id="5-2-paramétrage-d-une-condition">5.2. Paramétrage d’une condition
-      </h2>
-      <p>Les paramètres disponibles sont les suivants :</p>
-      <ol>
-        <li><strong>Type de condition</strong> : définit la condition à
-          vérifier. Actuellement, la seule option fonctionnelle est
-          <strong>Patient recherché</strong>.
-        </li>
-        <li><strong>Valeur associée à la condition</strong> : précise la valeur
-          à vérifier pour satisfaire la condition.</li>
-      </ol>
-      <p>Par exemple, si la valeur configurée est « Daisy Draté », la réponse
-        associée à cette condition ne sera affichée que lorsque le joueur aura
-        consulté le dossier du patient correspondant dans PharmaSoft.</p>
-      <figure class="screenshot"><img width="400"
-          alt="Screenshot from 2026-10-23 09-15-27"
-          src="https://github.com/user-attachments/assets/a94ed634-2de8-4eab-9b3e-ef46c80c3e56" />|
-        <img width="400" alt="condition_1"
-          src="https://github.com/user-attachments/assets/d9d4b4bd-815e-4082-b0e9-dd7e0ab1f2ac">
-      </figure>
-      <figure class="screenshot"><img width="400" alt="condition_2"
-          src="https://github.com/user-attachments/assets/0798d01d-99c0-41ab-a819-06f691e47475" />
-        |<img width="400" alt="condition_3"
-          src="https://github.com/user-attachments/assets/5ddbd36a-1483-4e80-8000-28dcc3322990">
-      </figure>
+      <h1 id="1-présentation-générale">1. Présentation générale</h2>
+        <p><strong>Simuline</strong> est un moteur permettant de concevoir et de
+          jouer à des jeux sérieux (<em>serious games</em>). Il propose un
+          éditeur
+          visuel dans lequel l’auteur du jeu définit les scènes, les modalités
+          de
+          réponse et les mécanismes de progression du scénario.</p>
+        <p>Ce guide présente les principales fonctionnalités de l’éditeur et
+          décrit la configuration des différents éléments qui composent un jeu.
+        </p>
+        <h1 id="2-édition-dun-jeu">2. Édition d’un jeu</h1>
+        <h2 id="21-principes-de-fonctionnement">2.1. Principes de fonctionnement
+        </h2>
+        <p>Dans Simuline, les éléments d’un jeu sont représentés par des boîtes
+          reliées entre elles. Il existe trois catégories de boîtes :</p>
+        <ul>
+          <li><strong>Boîtes de question</strong> : elles définissent les scènes
+            présentées au joueur. Actuellement, la scène est le seul type de
+            boîte
+            de question disponible.</li>
+          <li><strong>Boîtes de réponse</strong> : elles définissent les
+            modalités
+            de réponse proposées au joueur et les conséquences associées à ses
+            choix.</li>
+          <li><strong>Boîtes de supplément</strong> : elles permettent d’ajouter
+            des fonctionnalités ou de modifier le comportement des boîtes de
+            question ou de réponse auxquelles elles sont associées.</li>
+        </ul>
+
+        <p>Le menu de sélection du type de boîte s'affiche via un <b>clic droit
+            dans
+            l'interface</b>.</p>
+
+        <figure class="screenshot"><img width="600"
+            alt="Screenshot from 2026-10-23 09-15-27"
+            src="images/right_click.png" /></figure>
+
+        <p>Un jeu Simuline se compose d’un ensemble de scènes. Chaque scène
+          présente au joueur une question, un dialogue ou un contexte. Selon les
+          modalités définies par l’auteur, le joueur peut fournir une réponse
+          qui
+          détermine la suite du scénario.</p>
+        <p>En fonction de la réponse fournie et des connexions configurées dans
+          l’éditeur, le joueur peut accéder à une nouvelle scène, revenir à une
+          scène précédente ou rejouer la scène en cours.</p>
+        <h3 id="organisation-des-connexions">Organisation des connexions</h3>
+        <p>Les connexions entre les boîtes déterminent la structure et le
+          déroulement du jeu :</p>
+        <ul>
+          <li>Les connexions entre une boîte de question et ses boîtes de
+            réponse
+            définissent les modalités de réponse associées à une scène.</li>
+          <li>Les connexions entre les boîtes de réponse et les boîtes de
+            question
+            suivantes déterminent la progression du joueur dans le scénario.
+          </li>
+        </ul>
+        <p>Les connexions doivent donc être configurées de manière à représenter
+          le déroulement souhaité du jeu.</p>
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Éditeur</th>
+              <th>Jeu en cours</th>
+            </tr>
+            <tr>
+              <td>
+                <Figure class="screenshot"><img src="images/scene_ex.png">
+                </Figure>
+
+              </td>
+              <td>
+                <figure class="screenshot"> <img src="images/scene_vis.png">
+                </figure>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h3 id="fin-du-scénario">Fin du scénario</h3>
+        <p>Pour valider un scénario, celui-ci doit obligatoirement finir par une
+          boîte de fin. La boîte de fin marque la fin du jeu et l'affichage du
+          score et du bilan du joueur.</p>
+        <h2 id="22-difficultés-dédition-courantes">2.2 Difficultés d'édition
+          courantes</h2>
+        <p>En cas d'impossibilité à enregistrer le scénario, voici quelques
+          éléments à vérifier:</p>
+        <ul>
+          <li><strong>Un scénario doit obligatoirement finir par une boîte de
+              fin</strong>. Sans boîte de fin connectée à au mons un chemin dans
+            le scénario, le scénario ne pourra pas être sauvegardé.</li>
+          <li><strong>Toutes les boîtes de question et réponse doivent être
+              connectées</strong>. L'absence d'une de ces connections mènerait à
+            une incohérence dans le scénario. Le programme ne permettra pas de
+            sauvegarder un scénario avec des branches inconsistantes.</li>
+        </ul>
+        <p>-</p>
+        <h1 id="3-configuration-des-questions">3. Configuration des questions
+        </h1>
+        <h2 id="31-scène">3.1. Scène</h2>
+        <p>La boîte <strong>Scène</strong> définit l’écran principal présenté au
+          joueur. Elle permet notamment de configurer :</p>
+        <ul>
+          <li>le texte de la question, du dialogue ou du contexte ;</li>
+          <li>l’image d’arrière-plan ;</li>
+          <li>l’image de l’interlocuteur ;</li>
+          <li>les illustrations complémentaires éventuellement présentées avant
+            la
+            scène.</li>
+        </ul>
+        <p>Le texte configuré dans la boîte correspond au contenu affiché dans
+          la
+          partie supérieure gauche de l’écran de jeu.</p>
+        <figure class="screenshot"><img width="450"
+            alt="Configuration d'une scène" src="images/scene_num.png">
+        </figure>
+        <p>Les commandes de l’éditeur de texte sont les suivantes :</p>
+        <ol>
+          <li><strong>Texte de la scène</strong> : permet de saisir ou de
+            modifier
+            le texte présenté au joueur.</li>
+          <li><strong>Insertion d’un lien</strong> : permet d’ajouter un lien
+            vers
+            un site externe dans le texte.</li>
+          <li><strong>Mise en italique</strong> : permet de mettre en italique
+            le
+            texte sélectionné.</li>
+          <li><strong>Saut de ligne</strong> : permet d’insérer un retour à la
+            ligne.</li>
+          <li><strong>Suppression de la boîte</strong> : permet de supprimer la
+            boîte de scène.</li>
+        </ol>
+        <p>Une boîte de scène peut être associée à deux types de boîtes de
+          supplément : les boîtes d’illustration et les boîtes de plugin.</p>
+        <h2 id="32-illustrations">3.2. Illustrations</h2>
+        <p>Les boîtes d’illustration permettent d’associer des images à une
+          scène.
+          Trois types d’illustrations sont disponibles :</p>
+        <ul>
+          <li><strong>Background</strong> : définit l’image d’arrière-plan de la
+            scène, par exemple une officine ou un laboratoire.</li>
+          <li><strong>Interlocutor</strong> : définit l’image de l’interlocuteur
+            présenté au joueur, par exemple un patient ou un enseignant.</li>
+          <li><strong>Additional</strong> : définit une illustration
+            complémentaire affichée avant la scène. Ce type peut notamment être
+            utilisé pour présenter une ordonnance, un spectre ou une
+            photographie.
+          </li>
+        </ul>
+        <figure class="screenshot"><img width="250"
+            alt="Configuration d'une illustration"
+            src="images/illustration_num.png">
+        </figure>
+        <p>La boîte d’illustration comporte les éléments suivants :</p>
+        <ol>
+          <li><strong>Sélection du fichier</strong> : permet de choisir le
+            fichier
+            image à utiliser.</li>
+          <li><strong>Nom du fichier</strong> : indique le nom du fichier
+            sélectionné.</li>
+          <li><strong>Prévisualisation</strong> : affiche un aperçu de l’image
+            choisie.</li>
+          <li><strong>Type d’illustration</strong> : permet de sélectionner la
+            catégorie de l’illustration (<em>Background</em>,
+            <em>Interlocutor</em> ou <em>Additional</em>).
+          </li>
+        </ol>
+        <h2 id="33-plugins">3.3. Plugins</h2>
+        <p>Les boîtes de plugin permettent d’ajouter des fonctionnalités
+          complémentaires au jeu.</p>
+        <p>Actuellement, le seul plugin disponible est le plugin
+          <strong>Computer</strong>. Celui-ci ajoute un ordinateur en bas de
+          l’écran de jeu. Lorsque le joueur clique sur cet ordinateur, il peut
+          accéder à l’un des outils proposés :
+        </p>
+        <ul>
+          <li>un simulateur de microscope ;</li>
+          <li><strong>PharmaSoft</strong>, un simulateur de logiciel officinal.
+          </li>
+        </ul>
+        <p>L’option <strong>Remove plugin</strong> permet de retirer le plugin
+          des
+          scènes suivantes.</p>
+        <figure class="screenshot"><img width="250"
+            alt="Configuration d'un plugin" src="images/plugin_num.png">
+        </figure>
+        <h1 id="4-configuration-des-réponses">4. Configuration des réponses</h1>
+        <p>Les boîtes de réponse définissent les modalités selon lesquelles le
+          joueur peut répondre à une question. Elles permettent également de
+          configurer les scores attribués et les commentaires présentés en
+          fonction du résultat.</p>
+        <p>Simuline propose trois types de réponses :</p>
+        <ul>
+          <li><strong>Réponse fixe</strong> : correspond à un choix prédéfini
+            par
+            l’auteur. Elle est notamment utilisée pour créer des questions à
+            choix
+            multiples (QCM).</li>
+          <li><strong>Réponse numérique</strong> : attend une valeur numérique,
+            qui peut être exacte ou comprise dans un intervalle défini.</li>
+          <li><strong>Réponse textuelle</strong> : attend une réponse saisie
+            sous
+            forme de texte.</li>
+        </ul>
+        <h2 id="41-réponse-fixe">4.1. Réponse fixe</h2>
+        <p>Une boîte de réponse fixe correspond à un choix proposé au joueur
+          dans
+          une question à choix multiples.</p>
+        <p>Une scène peut être associée à plusieurs réponses fixes, ou à une
+          seule. L’ordre d’affichage des réponses dépend actuellement de leur
+          ordre de création : la première réponse créée est la première
+          affichée.
+          Il n’est pas possible de modifier directement cet ordre dans
+          l’éditeur.
+        </p>
+        <figure class="screenshot"><img width="318"
+            alt="Configuration d'une réponse fixe" src="images/fixe_num.png">
+        </figure>
+        <p>Les paramètres disponibles sont les suivants :</p>
+        <ol>
+          <li><strong>Texte de la réponse</strong> : définit le libellé du choix
+            proposé au joueur.</li>
+          <li><strong>Commentaire de feedback</strong> : définit le commentaire
+            associé à cette réponse.</li>
+          <li><strong>Score</strong> : définit le nombre de points attribués à
+            la
+            réponse. Le score peut être positif ou négatif.</li>
+          <li><strong>Affichage immédiat du feedback</strong> : lorsque cette
+            option est activée, le commentaire est affiché immédiatement après
+            la
+            sélection de la réponse. Dans le cas contraire, il est présenté
+            uniquement lors du bilan de fin de jeu.</li>
+        </ol>
+        <h2 id="42-réponse-textuelle">4.2. Réponse textuelle</h2>
+        <p>Une boîte de réponse textuelle permet de demander au joueur de saisir
+          une réponse sous forme de texte. Elle convient notamment aux questions
+          portant sur un concept, le nom d’un médicament ou toute autre réponse
+          exprimable par un texte.</p>
+        <p>La configuration permet de définir la réponse attendue et les règles
+          de
+          comparaison utilisées pour déterminer si la réponse du joueur est
+          correcte. Selon le paramétrage de la sensibilité à la casse, les
+          différences de majuscules et de minuscules peuvent être prises en
+          compte
+          ou ignorées.</p>
+        <figure class="screenshot"><img width="559"
+            alt="Configuration d'une réponse textuelle"
+            src="images/text_num.png">
+        </figure>
+        <p>Les paramètres disponibles sont les suivants :</p>
+        <ol>
+          <li><strong>Indication</strong> : fournit des instructions au joueur
+            sur
+            le format attendu. Par exemple : « Répondez en un seul mot, sans
+            déterminant. Attention à l’orthographe. »</li>
+          <li><strong>Réponse attendue</strong> : définit le texte de référence
+            utilisé pour évaluer la réponse. Le paramètre de sensibilité à la
+            casse détermine si les différences de majuscules et de minuscules
+            sont
+            prises en compte. Les autres règles de comparaison dépendent du
+            comportement de l’éditeur.</li>
+          <li><strong>Score en cas de réponse correcte</strong> : définit le
+            nombre de points attribués lorsque la réponse est correcte.</li>
+          <li><strong>Score en cas de réponse incorrecte</strong> : définit le
+            nombre de points attribués lorsque la réponse est incorrecte.</li>
+          <li><strong>Commentaire en cas de réponse correcte</strong> : définit
+            le
+            feedback associé à une réponse correcte.</li>
+          <li><strong>Commentaire en cas de réponse incorrecte</strong> :
+            définit
+            le feedback associé à une réponse incorrecte.</li>
+          <li><strong>Affichage immédiat du feedback en cas de réponse
+              correcte</strong> : lorsque cette option est activée, le
+            commentaire
+            correspondant est affiché immédiatement après une réponse correcte.
+            Sinon, il est présenté uniquement lors du bilan de fin de jeu.</li>
+          <li><strong>Affichage immédiat du feedback en cas de réponse
+              incorrecte</strong> : lorsque cette option est activée, le
+            commentaire correspondant est affiché immédiatement après une
+            réponse
+            incorrecte. Sinon, il est présenté uniquement lors du bilan de fin
+            de
+            jeu.</li>
+        </ol>
+        <h2 id="43-réponse-numérique">4.3. Réponse numérique</h2>
+        <p>Une boîte de réponse numérique permet au joueur de saisir une valeur
+          numérique. Les nombres entiers et décimaux, positifs ou négatifs, sont
+          pris en charge.</p>
+        <figure class="screenshot"><img width="561"
+            alt="Configuration d'une réponse numérique"
+            src="images/nuber_num.png">
+        </figure>
+        <p>Les paramètres disponibles sont les suivants :</p>
+        <ol>
+          <li><strong>Indication</strong> : précise le format ou l’unité
+            attendue
+            pour la réponse. Par exemple : « Donnez votre réponse en mg/ml. »
+          </li>
+          <li><strong>Réponse attendue et mode de comparaison</strong> : définit
+            la valeur de référence et la méthode utilisée pour évaluer la
+            réponse
+            :</li>
+          <ul>
+            <li><strong>Exact</strong> : la valeur saisie doit correspondre
+              exactement à la valeur attendue.</li>
+            <li><strong>Range</strong> : la valeur saisie doit appartenir à
+              l’intervalle défini.</li>
+          </ul>
+          <li><strong>Score en cas de réponse correcte</strong> : définit le
+            nombre de points attribués lorsque la réponse est correcte.</li>
+          <li><strong>Score en cas de réponse incorrecte</strong> : définit le
+            nombre de points attribués lorsque la réponse est incorrecte.</li>
+          <li><strong>Commentaire en cas de réponse correcte</strong> : définit
+            le
+            feedback associé à une réponse correcte.</li>
+          <li><strong>Commentaire en cas de réponse incorrecte</strong> :
+            définit
+            le feedback associé à une réponse incorrecte.</li>
+          <li><strong>Affichage immédiat du feedback en cas de réponse
+              correcte</strong> : lorsque cette option est activée, le
+            commentaire
+            correspondant est affiché immédiatement après une réponse correcte.
+            Sinon, il est présenté uniquement lors du bilan de fin de jeu.</li>
+          <li><strong>Affichage immédiat du feedback en cas de réponse
+              incorrecte</strong> : lorsque cette option est activée, le
+            commentaire correspondant est affiché immédiatement après une
+            réponse
+            incorrecte. Sinon, il est présenté uniquement lors du bilan de fin
+            de
+            jeu.</li>
+        </ol>
+        <h1 id="5-conditions-daffichage-des-réponses">5. Conditions d’affichage
+          des réponses</h1>
+        <h2 id="51-principe-général">5.1. Principe général</h2>
+        <p>Les boîtes de réponse peuvent être associées à des boîtes de
+          condition.
+          Ces dernières permettent de contrôler l’affichage d’une réponse en
+          fonction d’une action effectuée par le joueur ou d’une condition
+          remplie
+          au cours du scénario.</p>
+        <p>Actuellement, le principal cas d’utilisation disponible concerne
+          l’affichage conditionnel d’une réponse en fonction de la consultation
+          du
+          dossier d’un patient dans PharmaSoft.</p>
+        <figure class="screenshot"><img width="255"
+            alt="Configuration d'une condition" src="images/condition_num.png">
+        </figure>
+        <h2 id="52-paramétrage-dune-condition">5.2. Paramétrage d’une condition
+        </h2>
+        <p>Les paramètres disponibles sont les suivants :</p>
+        <ol>
+          <li><strong>Type de condition</strong> : définit la condition à
+            vérifier. Actuellement, la seule option fonctionnelle est
+            <strong>Patient recherché</strong>.
+          </li>
+          <li><strong>Valeur associée à la condition</strong> : précise la
+            valeur
+            à vérifier pour satisfaire la condition.</li>
+        </ol>
+        <p>Par exemple, si la valeur configurée est « Daisy Draté », la réponse
+          associée à cette condition ne sera affichée que lorsque le joueur aura
+          consulté le dossier du patient correspondant dans PharmaSoft.</p>
+        <figure class="screenshot"><img width="400"
+            alt="Screenshot from 2026-10-23 09-15-27"
+            src="images/condition_ex.png" />|
+          <img width="400" alt="condition_1" src="images/condition_1.png">
+        </figure>
+        <figure class="screenshot"><img width="400" alt="condition_2"
+            src="images/condition_2.png" />
+          |<img width="400" alt="condition_3" src="images/condition_3.png">
+        </figure>
     </main>
   </div>
   <footer>Guide utilisateur de Simuline</footer>
