@@ -63,7 +63,7 @@ Les réponses sont les éléments qui vont permettre de définir les modalités 
 
 - Fixe: Une réponse fixée à l'avance par l'éditeur du scénario, permettant de créer une question de type QCM
 - Numérique: Une réponse sous forme de nombre, qui peut être un nombre exact ou une valeur comprise dans une fourchette donnée
-- Textuelle: Une réponse sous forme de texte. Le texte peut être défini ou non comme sensible à la casse, et ne sera alors pas sensible aux différence de majuscules, de caractères spéciaux, d'espaces, ...
+- Textuelle: Une réponse sous forme de texte
 
 ## Réponse fixe
 
@@ -75,4 +75,45 @@ La réponse fixe correspond à un élément de choix dans une question QCM. Une 
 2) Commentaire de feedback affiché après la réponse
 3) Score attribué à la réponse. Peut être positif ou négatif
 4) Si cochée, cette boîte indique que le feedback sera affiché directement après la réponse du joueur. Si non, il n'apparaîtra que lors du bilan à la fin du jeu
+
+## Réponse textuelle
+
+La réponse textuelle correspond à une réponse attendue sous forme de texte, par exemple lorsque la question attend un nom de concept, de médicament, ...
+Le texte peut être défini ou non comme sensible à la casse, et ne sera alors pas sensible aux différence de majuscules, de caractères spéciaux, d'espaces, etc.
+
+<img width="559" alt="text_num" src="https://github.com/user-attachments/assets/fb02cc92-d44d-4b79-9f70-e31c0788cd6e" />
+
+1) Indication donnée pour la réponse attendue. Par exemple: "Répondez en un seul mot, sans déterminant. Attention à l'orthographe"
+2) Réponse attendue. La sensibilité à la casse indique si les majuscules, espaces, etc. doivent être pris en compte ou non dans la réponse.
+3) Score obtenu lorsque la réponse est correcte
+4) Score obtenu lorsque la réponse est fausse
+5) Commentaire affiché lorsque la réponse est correcte
+6) Commentaire affiché lorsque la réponse est fausse
+7) Si cochée, cette boîte indique que le feedback sera affiché directement après la réponse correcte du joueur. Si non, il n'apparaîtra que lors du bilan à la fin du jeu
+8) Si cochée, cette boîte indique que le feedback sera affiché directement après la réponse fausse du joueur. Si non, il n'apparaîtra que lors du bilan à la fin du jeu
+
+## Réponse numérique
+
+La réponse numérique correspond à une réponse attendue sous forme de nombre, entier ou décimal, positif ou négatif.
+
+<img width="561" alt="nuber_num" src="https://github.com/user-attachments/assets/05f3ddbb-5baa-4acc-9185-c5465836ee0a" />
+
+1) Indication donnée pour la réponse attendue. Par exemple: "Donnez votre réponse en mg/ml"
+2) Réponse attendue. Le mode indique si le nombre attendu doit être strictement exact (mode Exact), ou peut être compris dans une fourchette donnée (mode Range)
+3) Score obtenu lorsque la réponse est correcte
+4) Score obtenu lorsque la réponse est fausse
+5) Commentaire affiché lorsque la réponse est correcte
+6) Commentaire affiché lorsque la réponse est fausse
+7) Si cochée, cette boîte indique que le feedback sera affiché directement après la réponse correcte du joueur. Si non, il n'apparaîtra que lors du bilan à la fin du jeu
+8) Si cochée, cette boîte indique que le feedback sera affiché directement après la réponse fausse du joueur. Si non, il n'apparaîtra que lors du bilan à la fin du jeu
+
+Les bôites de réponse peuvent être modifiées par des boîtes de condition.
+
+## Condition
+Une boîte de condition permet d'afficher un réponse uniquement lorsqu'une certaine condition à été remplie par le joueur. Actuellement, le seul cas d'usage est l'apparition d'une réponse conditionnée à la consultation du dossier du patient dans PharmaSoft.
+
+<img width="255" alt="condition_num" src="https://github.com/user-attachments/assets/55c9fd5f-6646-47b7-8eef-962f71117db1" />
+
+1) Type de condition. La seule option fonctionnelle pour le moment est "Patient reherché"
+2) Valeur associée à la condition. Ici, la réponse liée à cette boîte n'apparaîtra que lorsque le dossier du patient "Daisy Draté" aura été consulté.
 
