@@ -1,13 +1,12 @@
-@import "{{ site.theme }}";
 
-/* Réduction des marges latérales du contenu */
+/* Reduce horizontal margins */
 .main-content {
   max-width: 90rem;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-/* Marges adaptées aux écrans mobiles */
+/* Adjust margins on mobile */
 @media screen and (max-width: 42rem) {
   .main-content {
     padding-left: 1rem;
