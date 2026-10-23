@@ -26,14 +26,14 @@ body {
 }
 
 .hero {
-    padding: clamp(2.5rem, 7vw, 5.5rem) 1.25rem 3rem;
+    padding: 12px;
     color: white;
-    background: linear-gradient(135deg, #182c58, #3157a4 65%, #4d80c7);
+    background: linear-gradient(135deg, #1d7635, rgb(2, 154, 2) 65%, rgb(5, 199, 5));
 }
 
 .hero-inner,
 .layout {
-    width: min(1120px, calc(100% - 2rem));
+    width: calc(100% - 4rem);
     margin: 0 auto;
 }
 
