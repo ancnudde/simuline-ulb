@@ -14,8 +14,9 @@ Un jeu sur simuline se compose d'un ensemble de scènes. Dans une scène, une qu
 
 Les connections entre une bôite de question et une boîte de réponse forment la scène. Les connections entre les boites de réponses et les boîtes de questions suivantes donnent la progression des scènes au cours du jeu en fonction des réponses de l'utilisateur.
 
-<img width="1680" height="933" alt="scene_vis" src="https://github.com/user-attachments/assets/9df2c350-0f21-4936-98ed-89d27c942e57" />
-<img width="866" height="553" alt="scene_ex" src="https://github.com/user-attachments/assets/140edef8-413f-43c0-a224-209d9d1bacc2" />
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+<img width="540" height="466" alt="scene_vis" src="https://github.com/user-attachments/assets/9df2c350-0f21-4936-98ed-89d27c942e57" /> | <img width="430" height="275" alt="scene_ex" src="https://github.com/user-attachments/assets/140edef8-413f-43c0-a224-209d9d1bacc2" />
 
 
 
